@@ -1,6 +1,6 @@
 package com.example.dome;
 
-public class Item {
+public abstract class Item {
     protected String title;
     protected int playingTime;
     private boolean gotIt;
@@ -56,5 +56,17 @@ public class Item {
 
     public void unSetOwn() {
         this.gotIt = false;
+    }
+    public abstract String getItemType();
+    public void print(){
+        System.out.print(getItemType() + ": " + title + " (" + playingTime + " mins)");
+        if(getOwn())
+        {
+            System.out.println("*");
+        }
+        else
+        {
+            System.out.println();
+        }
     }
 }

@@ -4,6 +4,7 @@ public class CD extends Item {
 
     private String artist; //  artist is unique to CD
     private int numberOfTracks; //  numberOfTracks is only on CD class
+    private final String itemType = "CD";
 
     /**
      * Initialize the CD.
@@ -64,17 +65,15 @@ public class CD extends Item {
     /**
      * Print details about this CD to the text terminal.
      */
+
+    @Override
+    public String getItemType(){
+        return itemType;
+    }
+    @Override
     public void print()
     {
-        System.out.print("CD: " + title + " (" + playingTime + " mins)");
-        if(super.getOwn())
-        {
-            System.out.println("*");
-        }
-        else
-        {
-            System.out.println();
-        }
+        super.print();
         System.out.println("    " + artist);
         System.out.println("    tracks: " + numberOfTracks);
         System.out.println("    " + getComment());

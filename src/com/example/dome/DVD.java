@@ -10,6 +10,7 @@ public class DVD extends Item
 {
 //  Director is Unique to DVD
     private String director;
+    private final String itemType = "DVD";
 
     /**
      * Constructor for objects of class DVD
@@ -45,17 +46,13 @@ public class DVD extends Item
     /**
      * Print details about this DVD to the text terminal.
      */
+    @Override
+    public String getItemType(){
+        return itemType;
+    }
     public void print()
     {
-        System.out.print("DVD: " + title + " (" + playingTime + " mins)");
-        if(super.getOwn())
-        {
-            System.out.println("*");
-        }
-        else
-        {
-            System.out.println();
-        }
+        super.print();
         System.out.println("    " + director);
         System.out.println("    " + getComment());
     }
