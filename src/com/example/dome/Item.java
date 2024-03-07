@@ -6,7 +6,7 @@ public class Item {
     private boolean gotIt;
     private String comment;
 
-    public Item(String title, int playingTime, boolean gotIt) {
+    public Item(String title, int playingTime) {
         this.title = title;
         this.playingTime = playingTime;
         this.gotIt = false;
@@ -29,5 +29,13 @@ public class Item {
 
     public void setOwn(boolean gotIt) {
         this.gotIt = gotIt;
+    }
+
+    public void setOwn() {
+        this.gotIt = true;
+    }
+
+    public void unSetOwn() {
+        this.gotIt = false;
     }
 }
