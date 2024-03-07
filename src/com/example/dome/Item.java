@@ -31,6 +31,8 @@ public class Item {
         this.gotIt = gotIt;
     }
 
+//  $A more robust and user-friendly way of implementing the setOwn()
+//  function would be to just set gotIt = true;
     public void setOwn() {
         this.gotIt = true;
     }
