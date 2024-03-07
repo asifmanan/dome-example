@@ -10,7 +10,6 @@ public class DVD extends Item
 {
 //  Director is Unique to DVD
     private String director;
-    private int playingTime; // playing time of the main feature
 
     /**
      * Constructor for objects of class DVD
