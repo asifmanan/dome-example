@@ -6,75 +6,22 @@ package com.example.dome;
  * with movie DVDs at this stage.
  *
  */
-public class DVD
+public class DVD extends Item
 {
-//  $All these attributes are the same as CD, so these can be shared
-    private String title;
 //  Director is Unique to DVD
     private String director;
     private int playingTime; // playing time of the main feature
-    private boolean gotIt;
-    private String comment;
 
     /**
      * Constructor for objects of class DVD
-     * @param theTitle The title of this DVD.
+     * @param title The title of this DVD.
      * @param theDirector The director of this DVD.
-     * @param time The running time of the main feature.
+     * @param playingTime The running time of the main feature.
      */
-    public DVD(String theTitle, String theDirector, int time)
+    public DVD(String title, String theDirector, int playingTime)
     {
-        title = theTitle;
+        super(title, playingTime);
         director = theDirector;
-        playingTime = time;
-        gotIt = false;
-        comment = "<no comment>";
-    }
-
-    /**
-     * Enter a comment for this DVD.
-     * @param comment The comment to be entered.
-     */
-//  Common method
-    public void setComment(String comment)
-    {
-        this.comment = comment;
-    }
-
-    /**
-     * @return The comment for this DVD.
-     */
-//  Common Method
-    public String getComment()
-    {
-        return comment;
-    }
-
-    /**
-     * Set the flag indicating whether we own this DVD.
-     * @param ownIt true if we own the DVD, false otherwise.
-     */
-//  Common Method
-    public void setOwn(boolean ownIt)
-    {
-        gotIt = ownIt;
-    }
-//  Common Method
-    public void setOwn(){
-        this.gotIt = true;
-    }
-//  Common Method
-    public void unSetOwn(){
-        this.gotIt = false;
-    }
-
-    /**
-     * @return true if we own a copy of this DVD.
-     */
-//  Common Method
-    public boolean getOwn()
-    {
-        return gotIt;
     }
 
     /**
@@ -88,7 +35,7 @@ public class DVD
 
     /**
      * sets a new director
-     * @dir the new director
+     * @param dir the new director
      */
 //  Unique Method
     public void setDirector(String dir)

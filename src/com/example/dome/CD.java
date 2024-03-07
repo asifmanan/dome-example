@@ -1,14 +1,9 @@
 package com.example.dome;
 
-public class CD {
+public class CD extends Item {
 
-    private String title;
     private String artist; //  artist is unique to CD
-
     private int numberOfTracks; //  numberOfTracks is only on CD class
-    private int playingTime;
-    private boolean gotIt;
-    private String comment;
 
     /**
      * Initialize the CD.
@@ -19,62 +14,12 @@ public class CD {
      */
     public CD(String theTitle, String theArtist, int tracks, int time)
     {
-        title = theTitle;
+//  To set fields on the super class, constructed be called
+//  or set() methods, which is the best approach?
+        super(theTitle, time);
         artist = theArtist;
         numberOfTracks = tracks;
-        playingTime = time;
-        gotIt = false;
-        comment = "<no comment>";
-    }
-
-    /**
-     * Enter a comment for this CD.
-     * @param comment The comment to be entered.
-     */
-//  Common Method
-    public void setComment(String comment)
-    {
-        this.comment = comment;
-    }
-
-    /**
-     * @return The comment for this CD.
-     */
-//  Common Method
-    public String getComment()
-    {
-        return comment;
-    }
-
-    /**
-     * Set the flag indicating whether we own this CD.
-     * @param ownIt true if we own the CD, false otherwise.
-     */
-
-//  $A more robust and user-friendly way of implementing the setOwn()
-//  function would be to just set gotIt = true;
-
-//  Common method
-    public void setOwn(boolean ownIt)
-    {
-        gotIt = ownIt;
-    }
-//  Common method
-    public void setOwn(){
-        this.gotIt = true;
-    }
-//  Common method
-    public void unSetOwn(){
-        this.gotIt = false;
-    }
-
-    /**
-     * @return true if we own a copy of this CD.
-     */
-//  Common method
-    public boolean getOwn()
-    {
-        return gotIt;
+        super.setOwn(false);
     }
 
     /**
@@ -88,12 +33,12 @@ public class CD {
 
     /**
      * sets a new artist
-     * @dir the new artist
+     * @artist the new artist
      */
 //  Unique method
-    public void setArtist(String dir)
+    public void setArtist(String artist)
     {
-        artist = dir;
+        this.artist = artist;
     }
 
     /**
@@ -107,18 +52,18 @@ public class CD {
 
     /**
      * sets number of tracks
-     * @trks number of tracks
+     * @param tracks number of tracks
      */
 //  Unique Method
-    public void setTracks(int trks)
+    public void setTracks(int tracks)
     {
-        numberOfTracks = trks;
+        numberOfTracks = tracks;
     }
 
 
-    /**
-     * Print details about this CD to the text terminal.
-     */
+//    /**
+//     * Print details about this CD to the text terminal.
+//     */
 //    public void print()
 //    {
 //        System.out.print("CD: " + title + " (" + playingTime + " mins)");
