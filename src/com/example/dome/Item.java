@@ -9,7 +9,7 @@ public class Item {
     /**
      * Initialize the Item.
      * @param title The title of the Item.
-     * @param playingTime The artist of the Item.
+     * @param playingTime playing time of the Item.
      */
     public Item(String title, int playingTime) {
         this.title = title;
