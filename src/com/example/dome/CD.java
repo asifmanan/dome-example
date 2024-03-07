@@ -61,24 +61,24 @@ public class CD extends Item {
     }
 
 
-//    /**
-//     * Print details about this CD to the text terminal.
-//     */
-//    public void print()
-//    {
-//        System.out.print("CD: " + title + " (" + playingTime + " mins)");
-//        if(gotIt)
-//        {
-//            System.out.println("*");
-//        }
-//        else
-//        {
-//            System.out.println();
-//        }
-//        System.out.println("    " + artist);
-//        System.out.println("    tracks: " + numberOfTracks);
-//        System.out.println("    " + comment);
-//    }
+    /**
+     * Print details about this CD to the text terminal.
+     */
+    public void print()
+    {
+        System.out.print("CD: " + title + " (" + playingTime + " mins)");
+        if(super.getOwn())
+        {
+            System.out.println("*");
+        }
+        else
+        {
+            System.out.println();
+        }
+        System.out.println("    " + artist);
+        System.out.println("    tracks: " + numberOfTracks);
+        System.out.println("    " + getComment());
+    }
 
 
 }

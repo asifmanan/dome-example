@@ -46,18 +46,18 @@ public class DVD extends Item
     /**
      * Print details about this DVD to the text terminal.
      */
-//    public void print()
-//    {
-//        System.out.print("DVD: " + title + " (" + playingTime + " mins)");
-//        if(gotIt)
-//        {
-//            System.out.println("*");
-//        }
-//        else
-//        {
-//            System.out.println();
-//        }
-//        System.out.println("    " + director);
-//        System.out.println("    " + comment);
-//    }
+    public void print()
+    {
+        System.out.print("DVD: " + title + " (" + playingTime + " mins)");
+        if(super.getOwn())
+        {
+            System.out.println("*");
+        }
+        else
+        {
+            System.out.println();
+        }
+        System.out.println("    " + director);
+        System.out.println("    " + getComment());
+    }
 }

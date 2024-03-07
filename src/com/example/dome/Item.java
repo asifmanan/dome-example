@@ -1,8 +1,8 @@
 package com.example.dome;
 
 public class Item {
-    private String title;
-    private int playingTime;
+    protected String title;
+    protected int playingTime;
     private boolean gotIt;
     private String comment;
 
